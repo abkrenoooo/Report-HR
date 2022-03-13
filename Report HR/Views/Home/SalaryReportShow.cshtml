@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "SalaryReportShow";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Pons Hour</td>
+            <td>Pons Value</td>
+            <td>Mins Hour </td>
+            <td>Mins Value</td>
+            <td>Absent Day</td>
+            <td>Absent Value</td>
+            <td>Total Salary</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td class="text-center">@ViewBag.PTime</td>
+            <td class="text-center">@ViewBag.PTimeS</td>
+            <td class="text-center">@ViewBag.MTime</td>
+            <td class="text-center">@ViewBag.MTimeS</td>
+            <td class="text-center">@ViewBag.Absent</td>
+            <td class="text-center">@ViewBag.AbsentS</td>
+            <td class="text-center">@ViewBag.Salary</td>
+
+
+
+        </tr>
+    </tbody>
+</table>
+<div class="w-100 text-center mt-4">
+    <a href="/home/SalaryReport" class="btn btn-outline-danger"> Return </a>
+</div>
+
+
+

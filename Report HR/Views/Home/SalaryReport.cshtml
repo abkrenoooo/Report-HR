@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "SalaryReport";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+
+<form action="/Home/SalaryReportShow" method="get">
+
+    <div class="row mb-3">
+        <label for="Name" class="col-sm-2 col-form-label">Employee</label>
+        <div class="col-sm-6">
+            <select class="form-control" required id="Name" name="EmployeeId">
+                @foreach (var item in ViewBag.Employee)
+                {
+                    <option class="form-control" value="@item.id">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="month" class="col-sm-2 col-form-label">DateFrom</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <input type="month" required class="form-control " id="month" name="Month">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /.card-body -->
+    <div class="w-75 text-center mt-4">
+        <button type="submit" class="btn btn-outline-dark">Get Result <small><em class="fa fa-plus"></em></small></button>
+    </div>
+
+</form>
+
+
+

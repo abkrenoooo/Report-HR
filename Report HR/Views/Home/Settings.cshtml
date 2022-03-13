@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+<!-- form start -->
+<form action="/Home/Settings" method="post">
+    <div class="row mb-3">
+        <label for="Name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <select class="form-control" required id="Name" name="EmployeeID">
+                @foreach (var item in ViewBag.Employee)
+                {
+                    <option class="form-control" value="@item.id">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Pons Type" class="col-sm-2 col-form-label">Pons Type</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control" required id="Pons Type" name="Pons">
+                        <option id="2" value="Pons/Pound">Pons/Pound</option>
+                        <option id="1" value="Pons/Hour">Pons/Hour</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <label for="PonsValue" class="col-sm-2 col-form-label">Pons Value</label>
+        <div class="col-sm-5">
+            <input type="number" step=0.01 required class="form-control" id="Pons" name="PonsValue">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Mins Type" class="col-sm-2 col-form-label">Mins Type</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control" required id="Mins Type" name="Mins">
+                        <option id="2" value="Mins/Pound">Mins/Pound</option>
+                        <option id="1" value="Mins/Hour">Mins/Hour</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Mins" class="col-sm-2 col-form-label">Mins Value</label>
+        <div class="col-sm-5">
+            <input type="number" step=0.01 required class="form-control" id="Mins" name="MinsValue">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Absence Type" class="col-sm-2 col-form-label">Absence Type</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control" required id="Absence Type" name="Absence">
+                        <option id="2" value="Absence/Pound">Absence/Pound</option>
+                        <option id="1" value="Absence/Day">Absence/Day</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Absence" class="col-sm-2 col-form-label">Absence Value</label>
+        <div class="col-sm-5">
+            <input type="number" step=0.01 required class="form-control" id="Absence" name="AbsenceValue">
+        </div>
+    </div>
+
+    <!-- /.card-body -->
+
+    <div class="w-75 text-center mt-4">
+        <button type="submit" class="btn btn-outline-success">
+            Save
+            <small>
+                <em class="fa fa-plus"></em>
+            </small>
+        </button>
+    </div>
+</form>
+
+
+
+

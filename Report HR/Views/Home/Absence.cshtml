@@ -1,0 +1,75 @@
+﻿@model Report_HR.Models.Employee
+@{
+    ViewBag.Title = "Pons";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+<!-- form start -->
+<form action="/Home/Absence" method="post">
+    <div class="row mb-3">
+        <label for="Name" class="col-sm-2 col-form-label">Employee</label>
+        <div class="col-sm-6">
+            <select class="form-control" required id="Name" name="EmployeeId">
+                @foreach (var item in ViewBag.Employee)
+                {
+                    <option class="form-control" value="@item.id">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="state" class="col-sm-2 col-form-label">Pons Type</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control" required id="state" name="state">
+                        <option id="Attend" value="Attend">Attend</option>
+                        <option id="leave" value="leave">leave</option>
+                        <option id="Absent" value="Absent">Absent</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Date" class="col-sm-2 col-form-label">Date</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <input type="date" required class="form-control " id="Date" name="Date">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="Time" class="col-sm-2 col-form-label">Time</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col">
+                    <input type="time" required class="form-control " id="Time" name="Time">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.card-body -->
+    <div class="w-75 text-center mt-4">
+        <button type="submit" class="btn btn-outline-dark">Save <small><em class="fa fa-plus"></em></small></button>
+    </div>
+
+</form>
+<script>
+    $(document).ready(function () {
+        $('#state').change(function () {
+            if ($('#state').val() != 'Absent') {
+                $('#Time').attr('disabled', false);
+            } else {
+                $('#Time').attr('disabled', true);
+            }
+        })
+    });
+</script>
+
